@@ -1,24 +1,42 @@
-# README
+# Learnflow
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+A visitor-facing edtech landing page built with Ruby on Rails 8. 
+Designed to practice Growth team patterns: A/B testing, conversion 
+funnels, ERB and HAML templating, and server-side rendering.
 
-Things you may want to cover:
+## Live features
 
-* Ruby version
+- A/B tested CTA on the landing page — randomly assigns 
+  "Start Learning Free" or "Try 8 Weeks Free" on each visit
+- Course catalog with three subjects, each with a detail page
+- Signup conversion funnel with POST form and redirect
+- HAML and ERB views side by side on the course detail page
+- Shared layout with nav bar via application.html.erb
 
-* System dependencies
+## Stack
 
-* Configuration
+- Ruby 3.2.2
+- Rails 8.1.3
+- HAML (via haml-rails gem)
+- CSS — no framework, handwritten
+- WSL / Ubuntu on Windows
 
-* Database creation
+## Run locally
 
-* Database initialization
+```bash
+git clone https://github.com/iroussos25/learnflow
+cd learnflow
+bundle install
+rails s
+```
 
-* How to run the test suite
+Visit `http://localhost:3000`
 
-* Services (job queues, cache servers, search engines, etc.)
+## What I learned
 
-* Deployment instructions
-
-* ...
+Built in one session as a deliberate practice exercise before a 
+technical interview. Covers the full Rails request cycle — routing, 
+controller instance variables, ERB loops, HAML syntax, form_with 
+POST handling, and layout files. The A/B test mirrors the kind of 
+variant assignment a Growth team engineer would implement on a 
+real conversion funnel.
