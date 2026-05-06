@@ -66,3 +66,5 @@ group :test do
 end
 
 gem "haml-rails", "~> 3.0"
+
+gem "dockerfile-rails", ">= 1.7", :group => :development
