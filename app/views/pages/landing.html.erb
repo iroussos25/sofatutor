@@ -1,0 +1,19 @@
+<div class="hero">
+  <h1>Learn Anything. At Your Own Pace.</h1>
+  <p>Join thousands of students mastering new subjects every day.</p>
+  <a href="/signup" class="cta-button"><%= @cta %></a>
+</div>
+
+<div class="courses">
+  <h2>What do you want to learn?</h2>
+
+  <div class="course-grid">
+    <% @courses.each do |course| %>
+      <div class="course-card">
+        <h3><%= course[:title] %></h3>
+        <p><%= course[:description] %></p>
+        <a href="/courses/<%= course[:id] %>">Explore →</a>
+      </div>
+    <% end %>
+  </div>
+</div>

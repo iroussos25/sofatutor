@@ -1,0 +1,18 @@
+<div class="signup">
+  <h1>Start Learning Today</h1>
+  <p>Join thousands of students already on Learnflow.</p>
+
+  <%= form_with url: "/signup", method: :post do |f| %>
+    <div>
+      <%= f.label :name, "Your Name" %>
+      <%= f.text_field :name, placeholder: "Jane Smith" %>
+    </div>
+
+    <div>
+      <%= f.label :email, "Email Address" %>
+      <%= f.email_field :email, placeholder: "jane@example.com" %>
+    </div>
+
+    <%= f.submit "Create My Account" %>
+  <% end %>
+</div>

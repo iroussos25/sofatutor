@@ -1,0 +1,12 @@
+.course-detail
+  %a{href: "/"} ← Back to courses
+
+  %h1= @course[:title]
+  %p= @course[:description]
+
+  %h2 What you will learn
+  %ul
+    - @course[:topics].each do |topic|
+      %li= topic
+
+  %a.cta-button{href: "/signup"} Start Learning Free
