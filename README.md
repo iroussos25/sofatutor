@@ -24,7 +24,7 @@ funnels, ERB and HAML templating, and server-side rendering.
 ## Run locally
 
 ```bash
-git clone https://github.com/iroussos25/learnflow
+git clone https://github.com/iroussos25/learnflows
 cd learnflow
 bundle install
 rails s
