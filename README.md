@@ -29,7 +29,11 @@ cd learnflow
 bundle install
 rails s
 ```
+## Live demo
 
+https://learnflows.fly.dev
+
+## Run locally
 Visit `http://localhost:3000`
 
 ## What I learned
