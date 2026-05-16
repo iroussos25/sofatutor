@@ -1477,3 +1477,13 @@ Migrating to AddUniqueIndexToConversionsOnAssignmentId (20260516124113)
   [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20260516124113') RETURNING "version" /*application='Learnflows'*/[0m
   [1m[36mTRANSACTION (6.6ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='Learnflows'*/[0m
   [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='Learnflows'*/[0m
+Started GET "/" for 127.0.0.1 at 2026-05-16 16:41:54 +0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='Learnflows'*/[0m
+Processing by PagesController#landing as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/landing.html.erb within layouts/application
+  Rendered pages/landing.html.erb within layouts/application (Duration: 3.6ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 47.2ms | GC: 6.4ms)
+Completed 200 OK in 104ms (Views: 53.3ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 9.8ms)
+
+
