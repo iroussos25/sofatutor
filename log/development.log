@@ -1,7 +1,7 @@
 Started GET "/" for 127.0.0.1 at 2026-05-06 17:50:55 +0300
-  [1m[35m (56.2ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY) /*application='Sofatutor'*/[0m
-  [1m[35m (3.6ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL) /*application='Sofatutor'*/[0m
-  [1m[36mActiveRecord::SchemaMigration Load (1.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='Sofatutor'*/[0m
+  [1m[35m (56.2ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY) /*application='Learnflows'*/[0m
+  [1m[35m (3.6ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL) /*application='Learnflows'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (1.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='Learnflows'*/[0m
 Processing by PagesController#landing as HTML
   Rendering layout layouts/application.html.erb
   Rendering pages/landing.html.erb within layouts/application
@@ -113,7 +113,7 @@ Completed 200 OK in 66ms (Views: 7.5ms | ActiveRecord: 0.0ms (0 queries, 0 cache
 
 
 Started GET "/" for 127.0.0.1 at 2026-05-07 00:00:57 +0300
-  [1m[36mActiveRecord::SchemaMigration Load (2.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='Sofatutor'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (2.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='Learnflows'*/[0m
 Processing by PagesController#landing as HTML
   Rendering layout layouts/application.html.erb
   Rendering pages/landing.html.erb within layouts/application
@@ -143,7 +143,7 @@ Completed 200 OK in 129ms (Views: 9.1ms | ActiveRecord: 0.0ms (0 queries, 0 cach
 
 
 Started GET "/" for 127.0.0.1 at 2026-05-07 00:08:40 +0300
-  [1m[36mActiveRecord::SchemaMigration Load (1.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='Sofatutor'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (1.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='Learnflows'*/[0m
 Processing by PagesController#landing as HTML
   Rendering layout layouts/application.html.erb
   Rendering pages/landing.html.erb within layouts/application
@@ -191,7 +191,7 @@ Completed 200 OK in 58ms (Views: 5.6ms | ActiveRecord: 0.0ms (0 queries, 0 cache
 
 
 Started GET "/" for 127.0.0.1 at 2026-05-07 00:33:41 +0300
-  [1m[36mActiveRecord::SchemaMigration Load (1.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='Sofatutor'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (1.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='Learnflows'*/[0m
 Processing by PagesController#landing as HTML
   Rendering layout layouts/application.html.erb
   Rendering pages/landing.html.erb within layouts/application
@@ -379,3 +379,1101 @@ Processing by PagesController#landing as HTML
 Completed 200 OK in 63ms (Views: 6.0ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
 
 
+  [1m[36mActiveRecord::InternalMetadata Load (2.0ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = 'environment' ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1 /*application='Learnflows'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Create (98.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ('environment', 'development', '2026-05-15 14:47:11.331338', '2026-05-15 14:47:11.331341') RETURNING "key" /*application='Learnflows'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (5.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='Learnflows'*/[0m
+Migrating to CreateAssignments (20260515072834)
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='Learnflows'*/[0m
+  [1m[35m (4.6ms)[0m  [1m[35mCREATE TABLE "assignments" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "visitor_token" varchar, "variant" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL) /*application='Learnflows'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20260515072834') RETURNING "version" /*application='Learnflows'*/[0m
+  [1m[36mTRANSACTION (3.4ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='Learnflows'*/[0m
+Migrating to CreateConversions (20260515130849)
+  [1m[36mTRANSACTION (1.8ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='Learnflows'*/[0m
+  [1m[35m (3.3ms)[0m  [1m[35mCREATE TABLE "conversions" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "assignment_id" integer NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, CONSTRAINT "fk_rails_61cef28fbf"
+FOREIGN KEY ("assignment_id")
+  REFERENCES "assignments" ("id")
+) /*application='Learnflows'*/[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE INDEX "index_conversions_on_assignment_id" ON "conversions" ("assignment_id") /*application='Learnflows'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20260515130849') RETURNING "version" /*application='Learnflows'*/[0m
+  [1m[36mTRANSACTION (3.4ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='Learnflows'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='Learnflows'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='Learnflows'*/[0m
+  [1m[36mAssignment Count (42.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "assignments" /*application='Learnflows'*/[0m
+  [1m[36mTRANSACTION (1.2ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='Learnflows'*/[0m
+  [1m[36mAssignment Create (3.0ms)[0m  [1m[32mINSERT INTO "assignments" ("visitor_token", "variant", "created_at", "updated_at") VALUES ('test_abc123', 'control', '2026-05-15 17:47:47.860489', '2026-05-15 17:47:47.860489') RETURNING "id" /*application='Learnflows'*/[0m
+  [1m[36mTRANSACTION (40.4ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='Learnflows'*/[0m
+  [1m[36mAssignment Count (1.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "assignments" /*application='Learnflows'*/[0m
+  [1m[36mAssignment Load (0.7ms)[0m  [1m[34mSELECT "assignments".* FROM "assignments" ORDER BY "assignments"."id" DESC LIMIT 1 /*application='Learnflows'*/[0m
+  [1m[36mAssignment Load (22.4ms)[0m  [1m[34mSELECT "assignments".* FROM "assignments" ORDER BY "assignments"."id" DESC LIMIT 1 /*application='Learnflows'*/[0m
+  [1m[36mConversion Load (0.8ms)[0m  [1m[34mSELECT "conversions".* FROM "conversions" WHERE "conversions"."assignment_id" = 1 LIMIT 1 /*application='Learnflows'*/[0m
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='Learnflows'*/[0m
+  [1m[36mConversion Create (2.4ms)[0m  [1m[32mINSERT INTO "conversions" ("assignment_id", "created_at", "updated_at") VALUES (1, '2026-05-15 17:59:06.987763', '2026-05-15 17:59:06.987763') RETURNING "id" /*application='Learnflows'*/[0m
+  [1m[36mTRANSACTION (128.3ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='Learnflows'*/[0m
+  [1m[36mTRANSACTION (1.6ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='Learnflows'*/[0m
+  [1m[36mConversion Create (2.9ms)[0m  [1m[32mINSERT INTO "conversions" ("assignment_id", "created_at", "updated_at") VALUES (1, '2026-05-15 17:59:20.317324', '2026-05-15 17:59:20.317324') RETURNING "id" /*application='Learnflows'*/[0m
+  [1m[36mTRANSACTION (2.3ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='Learnflows'*/[0m
+  [1m[36mAssignment Count (28.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "assignments" /*application='Learnflows'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='Learnflows'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='Learnflows'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = 'environment' ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1 /*application='Learnflows'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='Learnflows'*/[0m
+Migrating to AddIndexToAssignmentsOnVisitorToken (20260515203201)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='Learnflows'*/[0m
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_assignments_on_visitor_token" ON "assignments" ("visitor_token") /*application='Learnflows'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20260515203201') RETURNING "version" /*application='Learnflows'*/[0m
+  [1m[36mTRANSACTION (16.2ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='Learnflows'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='Learnflows'*/[0m
+Started GET "/" for 127.0.0.1 at 2026-05-16 14:26:50 +0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='Learnflows'*/[0m
+Processing by PagesController#landing as HTML
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*action='landing',application='Learnflows',controller='pages'*/[0m
+  ↳ app/controllers/pages_controller.rb:25:in `landing'
+  [1m[36mAssignment Create (2.1ms)[0m  [1m[32mINSERT INTO "assignments" ("visitor_token", "variant", "created_at", "updated_at") VALUES ('8630e64f0e27ce33', 'control', '2026-05-16 11:26:50.766533', '2026-05-16 11:26:50.766533') RETURNING "id" /*action='landing',application='Learnflows',controller='pages'*/[0m
+  ↳ app/controllers/pages_controller.rb:25:in `landing'
+  [1m[36mTRANSACTION (7.2ms)[0m  [1m[35mCOMMIT TRANSACTION /*action='landing',application='Learnflows',controller='pages'*/[0m
+  ↳ app/controllers/pages_controller.rb:25:in `landing'
+  Rendering layout layouts/application.html.erb
+  Rendering pages/landing.html.erb within layouts/application
+  Rendered pages/landing.html.erb within layouts/application (Duration: 1.5ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 20.4ms | GC: 0.7ms)
+Completed 200 OK in 115ms (Views: 26.4ms | ActiveRecord: 14.3ms (1 query, 0 cached) | GC: 41.6ms)
+
+
+Started GET "/signup" for 127.0.0.1 at 2026-05-16 14:26:59 +0300
+Processing by PagesController#signup as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/signup.html.erb within layouts/application
+  Rendered pages/signup.html.erb within layouts/application (Duration: 7.9ms | GC: 0.2ms)
+  Rendered layout layouts/application.html.erb (Duration: 9.5ms | GC: 0.5ms)
+Completed 200 OK in 12ms (Views: 10.5ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.5ms)
+
+
+Started GET "/signup" for 127.0.0.1 at 2026-05-16 14:27:43 +0300
+Processing by PagesController#signup as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/signup.html.erb within layouts/application
+  Rendered pages/signup.html.erb within layouts/application (Duration: 4.3ms | GC: 1.2ms)
+  Rendered layout layouts/application.html.erb (Duration: 7.5ms | GC: 1.2ms)
+Completed 200 OK in 10ms (Views: 8.7ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 1.2ms)
+
+
+Started POST "/signup" for 127.0.0.1 at 2026-05-16 14:27:47 +0300
+Processing by PagesController#signup_submit as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "name"=>"", "email"=>"[FILTERED]", "commit"=>"Create My Account"}
+  [1m[36mAssignment Load (0.2ms)[0m  [1m[34mSELECT "assignments".* FROM "assignments" WHERE "assignments"."visitor_token" = '8630e64f0e27ce33' LIMIT 1 /*action='signup_submit',application='Learnflows',controller='pages'*/[0m
+  ↳ app/controllers/pages_controller.rb:42:in `signup_submit'
+  [1m[36mConversion Load (0.2ms)[0m  [1m[34mSELECT "conversions".* FROM "conversions" WHERE "conversions"."assignment_id" = 2 LIMIT 1 /*action='signup_submit',application='Learnflows',controller='pages'*/[0m
+  ↳ app/controllers/pages_controller.rb:44:in `signup_submit'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*action='signup_submit',application='Learnflows',controller='pages'*/[0m
+  ↳ app/controllers/pages_controller.rb:45:in `signup_submit'
+  [1m[36mConversion Create (1.8ms)[0m  [1m[32mINSERT INTO "conversions" ("assignment_id", "created_at", "updated_at") VALUES (2, '2026-05-16 11:27:47.089220', '2026-05-16 11:27:47.089220') RETURNING "id" /*action='signup_submit',application='Learnflows',controller='pages'*/[0m
+  ↳ app/controllers/pages_controller.rb:45:in `signup_submit'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT TRANSACTION /*action='signup_submit',application='Learnflows',controller='pages'*/[0m
+  ↳ app/controllers/pages_controller.rb:45:in `signup_submit'
+Redirected to http://127.0.0.1:3000/thankyou
+↳ app/controllers/pages_controller.rb:49:in `signup_submit'
+Completed 302 Found in 34ms (ActiveRecord: 3.4ms (3 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/thankyou" for 127.0.0.1 at 2026-05-16 14:27:47 +0300
+Processing by PagesController#thankyou as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering pages/thankyou.html.erb within layouts/application
+  Rendered pages/thankyou.html.erb within layouts/application (Duration: 0.4ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 2.6ms | GC: 0.0ms)
+Completed 200 OK in 5ms (Views: 4.0ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/signup" for 127.0.0.1 at 2026-05-16 14:27:50 +0300
+Processing by PagesController#signup as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/signup.html.erb within layouts/application
+  Rendered pages/signup.html.erb within layouts/application (Duration: 1.6ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 2.6ms | GC: 0.0ms)
+Completed 200 OK in 4ms (Views: 3.1ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-16 14:27:54 +0300
+Processing by PagesController#landing as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/landing.html.erb within layouts/application
+  Rendered pages/landing.html.erb within layouts/application (Duration: 0.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 0.9ms | GC: 0.0ms)
+Completed 200 OK in 3ms (Views: 1.5ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/signup" for 127.0.0.1 at 2026-05-16 14:27:58 +0300
+Processing by PagesController#signup_submit as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "name"=>"", "email"=>"[FILTERED]", "commit"=>"Create My Account"}
+  [1m[36mAssignment Load (0.2ms)[0m  [1m[34mSELECT "assignments".* FROM "assignments" WHERE "assignments"."visitor_token" = '8630e64f0e27ce33' LIMIT 1 /*action='signup_submit',application='Learnflows',controller='pages'*/[0m
+  ↳ app/controllers/pages_controller.rb:42:in `signup_submit'
+  [1m[36mConversion Load (0.1ms)[0m  [1m[34mSELECT "conversions".* FROM "conversions" WHERE "conversions"."assignment_id" = 2 LIMIT 1 /*action='signup_submit',application='Learnflows',controller='pages'*/[0m
+  ↳ app/controllers/pages_controller.rb:44:in `signup_submit'
+Redirected to http://127.0.0.1:3000/thankyou
+↳ app/controllers/pages_controller.rb:49:in `signup_submit'
+Completed 302 Found in 5ms (ActiveRecord: 0.3ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/thankyou" for 127.0.0.1 at 2026-05-16 14:27:58 +0300
+Processing by PagesController#thankyou as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering pages/thankyou.html.erb within layouts/application
+  Rendered pages/thankyou.html.erb within layouts/application (Duration: 0.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 1.9ms | GC: 0.0ms)
+Completed 200 OK in 3ms (Views: 2.6ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+  [1m[36mAssignment Count (1.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "assignments" /*application='Learnflows'*/[0m
+  [1m[36mConversion Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "conversions" /*application='Learnflows'*/[0m
+  [1m[36mAssignment Load (0.3ms)[0m  [1m[34mSELECT "assignments".* FROM "assignments" WHERE "assignments"."id" = 2 LIMIT 1 /*application='Learnflows'*/[0m
+  [1m[36mConversion Load (0.2ms)[0m  [1m[34mSELECT "conversions".* FROM "conversions" WHERE "conversions"."assignment_id" = 2 LIMIT 1 /*application='Learnflows'*/[0m
+  [1m[36mAssignment Load (0.4ms)[0m  [1m[34mSELECT "assignments".* FROM "assignments" WHERE "assignments"."id" = 2 LIMIT 1 /*application='Learnflows'*/[0m
+  [1m[36mConversion Load (0.1ms)[0m  [1m[34mSELECT "conversions".* FROM "conversions" WHERE "conversions"."assignment_id" = 2 LIMIT 1 /*application='Learnflows'*/[0m
+  [1m[36mAssignment Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "assignments" /*application='Learnflows'*/[0m
+  [1m[36mConversion Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "conversions" /*application='Learnflows'*/[0m
+  [1m[36mConversion Load (0.2ms)[0m  [1m[34mSELECT "conversions".* FROM "conversions" WHERE "conversions"."assignment_id" = 1 /*application='Learnflows'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='Learnflows'*/[0m
+  [1m[36mConversion Destroy (0.6ms)[0m  [1m[31mDELETE FROM "conversions" WHERE "conversions"."id" = 1 /*application='Learnflows'*/[0m
+  [1m[36mTRANSACTION (7.9ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='Learnflows'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='Learnflows'*/[0m
+  [1m[36mConversion Destroy (0.8ms)[0m  [1m[31mDELETE FROM "conversions" WHERE "conversions"."id" = 2 /*application='Learnflows'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='Learnflows'*/[0m
+  [1m[36mAssignment Load (0.2ms)[0m  [1m[34mSELECT "assignments".* FROM "assignments" WHERE "assignments"."id" = 1 LIMIT 1 /*application='Learnflows'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='Learnflows'*/[0m
+  [1m[36mAssignment Destroy (0.4ms)[0m  [1m[31mDELETE FROM "assignments" WHERE "assignments"."id" = 1 /*application='Learnflows'*/[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='Learnflows'*/[0m
+  [1m[36mAssignment Count (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "assignments" /*application='Learnflows'*/[0m
+  [1m[36mConversion Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "conversions" /*application='Learnflows'*/[0m
+  [1m[36mCACHE ActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/signup" for 127.0.0.1 at 2026-05-16 15:42:50 +0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='Learnflows'*/[0m
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate
+
+You have 1 pending migration:
+
+db/migrate/20260516124113_add_unique_index_to_conversions_on_assignment_id.rb
+
+
+):
+  
+activerecord (8.1.3) lib/active_record/migration.rb:743:in `check_pending_migrations'
+activerecord (8.1.3) lib/active_record/migration.rb:660:in `block (2 levels) in call'
+activesupport (8.1.3) lib/active_support/file_update_checker.rb:88:in `execute'
+activesupport (8.1.3) lib/active_support/file_update_checker.rb:98:in `execute_if_updated'
+activerecord (8.1.3) lib/active_record/migration.rb:667:in `block in call'
+activerecord (8.1.3) lib/active_record/migration.rb:657:in `synchronize'
+activerecord (8.1.3) lib/active_record/migration.rb:657:in `call'
+actionpack (8.1.3) lib/action_dispatch/middleware/callbacks.rb:31:in `block in call'
+activesupport (8.1.3) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (8.1.3) lib/action_dispatch/middleware/callbacks.rb:30:in `call'
+actionpack (8.1.3) lib/action_dispatch/middleware/executor.rb:20:in `call'
+actionpack (8.1.3) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (8.1.3) lib/action_dispatch/middleware/debug_exceptions.rb:31:in `call'
+web-console (4.3.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.3.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.3.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.3.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (8.1.3) lib/action_dispatch/middleware/show_exceptions.rb:32:in `call'
+railties (8.1.3) lib/rails/rack/logger.rb:41:in `call_app'
+railties (8.1.3) lib/rails/rack/logger.rb:29:in `call'
+propshaft (1.3.2) lib/propshaft/quiet_assets.rb:11:in `call'
+actionpack (8.1.3) lib/action_dispatch/middleware/remote_ip.rb:98:in `call'
+actionpack (8.1.3) lib/action_dispatch/middleware/request_id.rb:34:in `call'
+rack (3.2.6) lib/rack/method_override.rb:28:in `call'
+rack (3.2.6) lib/rack/runtime.rb:24:in `call'
+activesupport (8.1.3) lib/active_support/cache/strategy/local_cache_middleware.rb:30:in `call'
+actionpack (8.1.3) lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
+actionpack (8.1.3) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
+actionpack (8.1.3) lib/action_dispatch/middleware/server_timing.rb:60:in `call'
+actionpack (8.1.3) lib/action_dispatch/middleware/executor.rb:20:in `call'
+propshaft (1.3.2) lib/propshaft/server.rb:37:in `call'
+actionpack (8.1.3) lib/action_dispatch/middleware/static.rb:27:in `call'
+rack (3.2.6) lib/rack/sendfile.rb:131:in `call'
+actionpack (8.1.3) lib/action_dispatch/middleware/host_authorization.rb:143:in `call'
+railties (8.1.3) lib/rails/engine.rb:534:in `call'
+puma (8.0.1) lib/puma/configuration.rb:305:in `call'
+puma (8.0.1) lib/puma/response.rb:79:in `block in handle_request'
+puma (8.0.1) lib/puma/thread_pool.rb:434:in `with_force_shutdown'
+puma (8.0.1) lib/puma/response.rb:78:in `handle_request'
+puma (8.0.1) lib/puma/server.rb:508:in `process_client'
+puma (8.0.1) lib/puma/server.rb:263:in `block in run'
+puma (8.0.1) lib/puma/thread_pool.rb:246:in `block in spawn_thread'
+Started GET "/signup" for 127.0.0.1 at 2026-05-16 15:42:50 +0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='Learnflows'*/[0m
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate
+
+You have 1 pending migration:
+
+db/migrate/20260516124113_add_unique_index_to_conversions_on_assignment_id.rb
+
+
+):
+  
+activerecord (8.1.3) lib/active_record/migration.rb:743:in `check_pending_migrations'
+activerecord (8.1.3) lib/active_record/migration.rb:660:in `block (2 levels) in call'
+activesupport (8.1.3) lib/active_support/file_update_checker.rb:88:in `execute'
+activerecord (8.1.3) lib/active_record/migration.rb:665:in `block in call'
+activerecord (8.1.3) lib/active_record/migration.rb:657:in `synchronize'
+activerecord (8.1.3) lib/active_record/migration.rb:657:in `call'
+actionpack (8.1.3) lib/action_dispatch/middleware/callbacks.rb:31:in `block in call'
+activesupport (8.1.3) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (8.1.3) lib/action_dispatch/middleware/callbacks.rb:30:in `call'
+actionpack (8.1.3) lib/action_dispatch/middleware/executor.rb:20:in `call'
+actionpack (8.1.3) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (8.1.3) lib/action_dispatch/middleware/debug_exceptions.rb:31:in `call'
+web-console (4.3.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.3.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.3.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.3.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (8.1.3) lib/action_dispatch/middleware/show_exceptions.rb:32:in `call'
+railties (8.1.3) lib/rails/rack/logger.rb:41:in `call_app'
+railties (8.1.3) lib/rails/rack/logger.rb:29:in `call'
+propshaft (1.3.2) lib/propshaft/quiet_assets.rb:11:in `call'
+actionpack (8.1.3) lib/action_dispatch/middleware/remote_ip.rb:98:in `call'
+actionpack (8.1.3) lib/action_dispatch/middleware/request_id.rb:34:in `call'
+rack (3.2.6) lib/rack/method_override.rb:28:in `call'
+rack (3.2.6) lib/rack/runtime.rb:24:in `call'
+activesupport (8.1.3) lib/active_support/cache/strategy/local_cache_middleware.rb:30:in `call'
+actionpack (8.1.3) lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
+actionpack (8.1.3) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
+actionpack (8.1.3) lib/action_dispatch/middleware/server_timing.rb:60:in `call'
+actionpack (8.1.3) lib/action_dispatch/middleware/executor.rb:20:in `call'
+propshaft (1.3.2) lib/propshaft/server.rb:37:in `call'
+actionpack (8.1.3) lib/action_dispatch/middleware/static.rb:27:in `call'
+rack (3.2.6) lib/rack/sendfile.rb:131:in `call'
+actionpack (8.1.3) lib/action_dispatch/middleware/host_authorization.rb:143:in `call'
+railties (8.1.3) lib/rails/engine.rb:534:in `call'
+puma (8.0.1) lib/puma/configuration.rb:305:in `call'
+puma (8.0.1) lib/puma/response.rb:79:in `block in handle_request'
+puma (8.0.1) lib/puma/thread_pool.rb:434:in `with_force_shutdown'
+puma (8.0.1) lib/puma/response.rb:78:in `handle_request'
+puma (8.0.1) lib/puma/server.rb:508:in `process_client'
+puma (8.0.1) lib/puma/server.rb:263:in `block in run'
+puma (8.0.1) lib/puma/thread_pool.rb:246:in `block in spawn_thread'
+Started GET "/signup" for 127.0.0.1 at 2026-05-16 15:42:54 +0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='Learnflows'*/[0m
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate
+
+You have 1 pending migration:
+
+db/migrate/20260516124113_add_unique_index_to_conversions_on_assignment_id.rb
+
+
+):
+  
+activerecord (8.1.3) lib/active_record/migration.rb:743:in `check_pending_migrations'
+activerecord (8.1.3) lib/active_record/migration.rb:660:in `block (2 levels) in call'
+activesupport (8.1.3) lib/active_support/file_update_checker.rb:88:in `execute'
+activerecord (8.1.3) lib/active_record/migration.rb:665:in `block in call'
+activerecord (8.1.3) lib/active_record/migration.rb:657:in `synchronize'
+activerecord (8.1.3) lib/active_record/migration.rb:657:in `call'
+actionpack (8.1.3) lib/action_dispatch/middleware/callbacks.rb:31:in `block in call'
+activesupport (8.1.3) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (8.1.3) lib/action_dispatch/middleware/callbacks.rb:30:in `call'
+actionpack (8.1.3) lib/action_dispatch/middleware/executor.rb:20:in `call'
+actionpack (8.1.3) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (8.1.3) lib/action_dispatch/middleware/debug_exceptions.rb:31:in `call'
+web-console (4.3.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.3.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.3.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.3.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (8.1.3) lib/action_dispatch/middleware/show_exceptions.rb:32:in `call'
+railties (8.1.3) lib/rails/rack/logger.rb:41:in `call_app'
+railties (8.1.3) lib/rails/rack/logger.rb:29:in `call'
+propshaft (1.3.2) lib/propshaft/quiet_assets.rb:11:in `call'
+actionpack (8.1.3) lib/action_dispatch/middleware/remote_ip.rb:98:in `call'
+actionpack (8.1.3) lib/action_dispatch/middleware/request_id.rb:34:in `call'
+rack (3.2.6) lib/rack/method_override.rb:28:in `call'
+rack (3.2.6) lib/rack/runtime.rb:24:in `call'
+activesupport (8.1.3) lib/active_support/cache/strategy/local_cache_middleware.rb:30:in `call'
+actionpack (8.1.3) lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
+actionpack (8.1.3) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
+actionpack (8.1.3) lib/action_dispatch/middleware/server_timing.rb:60:in `call'
+actionpack (8.1.3) lib/action_dispatch/middleware/executor.rb:20:in `call'
+propshaft (1.3.2) lib/propshaft/server.rb:37:in `call'
+actionpack (8.1.3) lib/action_dispatch/middleware/static.rb:27:in `call'
+rack (3.2.6) lib/rack/sendfile.rb:131:in `call'
+actionpack (8.1.3) lib/action_dispatch/middleware/host_authorization.rb:143:in `call'
+railties (8.1.3) lib/rails/engine.rb:534:in `call'
+puma (8.0.1) lib/puma/configuration.rb:305:in `call'
+puma (8.0.1) lib/puma/response.rb:79:in `block in handle_request'
+puma (8.0.1) lib/puma/thread_pool.rb:434:in `with_force_shutdown'
+puma (8.0.1) lib/puma/response.rb:78:in `handle_request'
+puma (8.0.1) lib/puma/server.rb:508:in `process_client'
+puma (8.0.1) lib/puma/server.rb:263:in `block in run'
+puma (8.0.1) lib/puma/thread_pool.rb:246:in `block in spawn_thread'
+Started GET "/favicon.ico" for 127.0.0.1 at 2026-05-16 15:42:56 +0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='Learnflows'*/[0m
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate
+
+You have 1 pending migration:
+
+db/migrate/20260516124113_add_unique_index_to_conversions_on_assignment_id.rb
+
+
+):
+  
+activerecord (8.1.3) lib/active_record/migration.rb:743:in `check_pending_migrations'
+activerecord (8.1.3) lib/active_record/migration.rb:660:in `block (2 levels) in call'
+activesupport (8.1.3) lib/active_support/file_update_checker.rb:88:in `execute'
+activerecord (8.1.3) lib/active_record/migration.rb:665:in `block in call'
+activerecord (8.1.3) lib/active_record/migration.rb:657:in `synchronize'
+activerecord (8.1.3) lib/active_record/migration.rb:657:in `call'
+actionpack (8.1.3) lib/action_dispatch/middleware/callbacks.rb:31:in `block in call'
+activesupport (8.1.3) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (8.1.3) lib/action_dispatch/middleware/callbacks.rb:30:in `call'
+actionpack (8.1.3) lib/action_dispatch/middleware/executor.rb:20:in `call'
+actionpack (8.1.3) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (8.1.3) lib/action_dispatch/middleware/debug_exceptions.rb:31:in `call'
+web-console (4.3.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.3.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.3.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.3.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (8.1.3) lib/action_dispatch/middleware/show_exceptions.rb:32:in `call'
+railties (8.1.3) lib/rails/rack/logger.rb:41:in `call_app'
+railties (8.1.3) lib/rails/rack/logger.rb:29:in `call'
+propshaft (1.3.2) lib/propshaft/quiet_assets.rb:11:in `call'
+actionpack (8.1.3) lib/action_dispatch/middleware/remote_ip.rb:98:in `call'
+actionpack (8.1.3) lib/action_dispatch/middleware/request_id.rb:34:in `call'
+rack (3.2.6) lib/rack/method_override.rb:28:in `call'
+rack (3.2.6) lib/rack/runtime.rb:24:in `call'
+activesupport (8.1.3) lib/active_support/cache/strategy/local_cache_middleware.rb:30:in `call'
+actionpack (8.1.3) lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
+actionpack (8.1.3) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
+actionpack (8.1.3) lib/action_dispatch/middleware/server_timing.rb:60:in `call'
+actionpack (8.1.3) lib/action_dispatch/middleware/executor.rb:20:in `call'
+propshaft (1.3.2) lib/propshaft/server.rb:37:in `call'
+actionpack (8.1.3) lib/action_dispatch/middleware/static.rb:27:in `call'
+rack (3.2.6) lib/rack/sendfile.rb:131:in `call'
+actionpack (8.1.3) lib/action_dispatch/middleware/host_authorization.rb:143:in `call'
+railties (8.1.3) lib/rails/engine.rb:534:in `call'
+puma (8.0.1) lib/puma/configuration.rb:305:in `call'
+puma (8.0.1) lib/puma/response.rb:79:in `block in handle_request'
+puma (8.0.1) lib/puma/thread_pool.rb:434:in `with_force_shutdown'
+puma (8.0.1) lib/puma/response.rb:78:in `handle_request'
+puma (8.0.1) lib/puma/server.rb:508:in `process_client'
+puma (8.0.1) lib/puma/server.rb:263:in `block in run'
+puma (8.0.1) lib/puma/thread_pool.rb:246:in `block in spawn_thread'
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = 'environment' ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1 /*application='Learnflows'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='Learnflows'*/[0m
+Migrating to AddUniqueIndexToConversionsOnAssignmentId (20260516124113)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='Learnflows'*/[0m
+  [1m[35m (1.3ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_conversions_on_assignment_id" ON "conversions" ("assignment_id") /*application='Learnflows'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION /*application='Learnflows'*/[0m
+Started GET "/signup" for 127.0.0.1 at 2026-05-16 15:44:04 +0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='Learnflows'*/[0m
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate
+
+You have 1 pending migration:
+
+db/migrate/20260516124113_add_unique_index_to_conversions_on_assignment_id.rb
+
+
+):
+  
+activerecord (8.1.3) lib/active_record/migration.rb:743:in `check_pending_migrations'
+activerecord (8.1.3) lib/active_record/migration.rb:660:in `block (2 levels) in call'
+activesupport (8.1.3) lib/active_support/file_update_checker.rb:88:in `execute'
+activerecord (8.1.3) lib/active_record/migration.rb:665:in `block in call'
+activerecord (8.1.3) lib/active_record/migration.rb:657:in `synchronize'
+activerecord (8.1.3) lib/active_record/migration.rb:657:in `call'
+actionpack (8.1.3) lib/action_dispatch/middleware/callbacks.rb:31:in `block in call'
+activesupport (8.1.3) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (8.1.3) lib/action_dispatch/middleware/callbacks.rb:30:in `call'
+actionpack (8.1.3) lib/action_dispatch/middleware/executor.rb:20:in `call'
+actionpack (8.1.3) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (8.1.3) lib/action_dispatch/middleware/debug_exceptions.rb:31:in `call'
+web-console (4.3.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.3.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.3.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.3.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (8.1.3) lib/action_dispatch/middleware/show_exceptions.rb:32:in `call'
+railties (8.1.3) lib/rails/rack/logger.rb:41:in `call_app'
+railties (8.1.3) lib/rails/rack/logger.rb:29:in `call'
+propshaft (1.3.2) lib/propshaft/quiet_assets.rb:11:in `call'
+actionpack (8.1.3) lib/action_dispatch/middleware/remote_ip.rb:98:in `call'
+actionpack (8.1.3) lib/action_dispatch/middleware/request_id.rb:34:in `call'
+rack (3.2.6) lib/rack/method_override.rb:28:in `call'
+rack (3.2.6) lib/rack/runtime.rb:24:in `call'
+activesupport (8.1.3) lib/active_support/cache/strategy/local_cache_middleware.rb:30:in `call'
+actionpack (8.1.3) lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
+actionpack (8.1.3) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
+actionpack (8.1.3) lib/action_dispatch/middleware/server_timing.rb:60:in `call'
+actionpack (8.1.3) lib/action_dispatch/middleware/executor.rb:20:in `call'
+propshaft (1.3.2) lib/propshaft/server.rb:37:in `call'
+actionpack (8.1.3) lib/action_dispatch/middleware/static.rb:27:in `call'
+rack (3.2.6) lib/rack/sendfile.rb:131:in `call'
+actionpack (8.1.3) lib/action_dispatch/middleware/host_authorization.rb:143:in `call'
+railties (8.1.3) lib/rails/engine.rb:534:in `call'
+puma (8.0.1) lib/puma/configuration.rb:305:in `call'
+puma (8.0.1) lib/puma/response.rb:79:in `block in handle_request'
+puma (8.0.1) lib/puma/thread_pool.rb:434:in `with_force_shutdown'
+puma (8.0.1) lib/puma/response.rb:78:in `handle_request'
+puma (8.0.1) lib/puma/server.rb:508:in `process_client'
+puma (8.0.1) lib/puma/server.rb:263:in `block in run'
+puma (8.0.1) lib/puma/thread_pool.rb:246:in `block in spawn_thread'
+Started GET "/favicon.ico" for 127.0.0.1 at 2026-05-16 15:44:04 +0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='Learnflows'*/[0m
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate
+
+You have 1 pending migration:
+
+db/migrate/20260516124113_add_unique_index_to_conversions_on_assignment_id.rb
+
+
+):
+  
+activerecord (8.1.3) lib/active_record/migration.rb:743:in `check_pending_migrations'
+activerecord (8.1.3) lib/active_record/migration.rb:660:in `block (2 levels) in call'
+activesupport (8.1.3) lib/active_support/file_update_checker.rb:88:in `execute'
+activerecord (8.1.3) lib/active_record/migration.rb:665:in `block in call'
+activerecord (8.1.3) lib/active_record/migration.rb:657:in `synchronize'
+activerecord (8.1.3) lib/active_record/migration.rb:657:in `call'
+actionpack (8.1.3) lib/action_dispatch/middleware/callbacks.rb:31:in `block in call'
+activesupport (8.1.3) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (8.1.3) lib/action_dispatch/middleware/callbacks.rb:30:in `call'
+actionpack (8.1.3) lib/action_dispatch/middleware/executor.rb:20:in `call'
+actionpack (8.1.3) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (8.1.3) lib/action_dispatch/middleware/debug_exceptions.rb:31:in `call'
+web-console (4.3.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.3.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.3.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.3.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (8.1.3) lib/action_dispatch/middleware/show_exceptions.rb:32:in `call'
+railties (8.1.3) lib/rails/rack/logger.rb:41:in `call_app'
+railties (8.1.3) lib/rails/rack/logger.rb:29:in `call'
+propshaft (1.3.2) lib/propshaft/quiet_assets.rb:11:in `call'
+actionpack (8.1.3) lib/action_dispatch/middleware/remote_ip.rb:98:in `call'
+actionpack (8.1.3) lib/action_dispatch/middleware/request_id.rb:34:in `call'
+rack (3.2.6) lib/rack/method_override.rb:28:in `call'
+rack (3.2.6) lib/rack/runtime.rb:24:in `call'
+activesupport (8.1.3) lib/active_support/cache/strategy/local_cache_middleware.rb:30:in `call'
+actionpack (8.1.3) lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
+actionpack (8.1.3) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
+actionpack (8.1.3) lib/action_dispatch/middleware/server_timing.rb:60:in `call'
+actionpack (8.1.3) lib/action_dispatch/middleware/executor.rb:20:in `call'
+propshaft (1.3.2) lib/propshaft/server.rb:37:in `call'
+actionpack (8.1.3) lib/action_dispatch/middleware/static.rb:27:in `call'
+rack (3.2.6) lib/rack/sendfile.rb:131:in `call'
+actionpack (8.1.3) lib/action_dispatch/middleware/host_authorization.rb:143:in `call'
+railties (8.1.3) lib/rails/engine.rb:534:in `call'
+puma (8.0.1) lib/puma/configuration.rb:305:in `call'
+puma (8.0.1) lib/puma/response.rb:79:in `block in handle_request'
+puma (8.0.1) lib/puma/thread_pool.rb:434:in `with_force_shutdown'
+puma (8.0.1) lib/puma/response.rb:78:in `handle_request'
+puma (8.0.1) lib/puma/server.rb:508:in `process_client'
+puma (8.0.1) lib/puma/server.rb:263:in `block in run'
+puma (8.0.1) lib/puma/thread_pool.rb:246:in `block in spawn_thread'
+Started GET "/signup" for 127.0.0.1 at 2026-05-16 15:44:07 +0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='Learnflows'*/[0m
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate
+
+You have 1 pending migration:
+
+db/migrate/20260516124113_add_unique_index_to_conversions_on_assignment_id.rb
+
+
+):
+  
+activerecord (8.1.3) lib/active_record/migration.rb:743:in `check_pending_migrations'
+activerecord (8.1.3) lib/active_record/migration.rb:660:in `block (2 levels) in call'
+activesupport (8.1.3) lib/active_support/file_update_checker.rb:88:in `execute'
+activerecord (8.1.3) lib/active_record/migration.rb:665:in `block in call'
+activerecord (8.1.3) lib/active_record/migration.rb:657:in `synchronize'
+activerecord (8.1.3) lib/active_record/migration.rb:657:in `call'
+actionpack (8.1.3) lib/action_dispatch/middleware/callbacks.rb:31:in `block in call'
+activesupport (8.1.3) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (8.1.3) lib/action_dispatch/middleware/callbacks.rb:30:in `call'
+actionpack (8.1.3) lib/action_dispatch/middleware/executor.rb:20:in `call'
+actionpack (8.1.3) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (8.1.3) lib/action_dispatch/middleware/debug_exceptions.rb:31:in `call'
+web-console (4.3.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.3.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.3.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.3.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (8.1.3) lib/action_dispatch/middleware/show_exceptions.rb:32:in `call'
+railties (8.1.3) lib/rails/rack/logger.rb:41:in `call_app'
+railties (8.1.3) lib/rails/rack/logger.rb:29:in `call'
+propshaft (1.3.2) lib/propshaft/quiet_assets.rb:11:in `call'
+actionpack (8.1.3) lib/action_dispatch/middleware/remote_ip.rb:98:in `call'
+actionpack (8.1.3) lib/action_dispatch/middleware/request_id.rb:34:in `call'
+rack (3.2.6) lib/rack/method_override.rb:28:in `call'
+rack (3.2.6) lib/rack/runtime.rb:24:in `call'
+activesupport (8.1.3) lib/active_support/cache/strategy/local_cache_middleware.rb:30:in `call'
+actionpack (8.1.3) lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
+actionpack (8.1.3) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
+actionpack (8.1.3) lib/action_dispatch/middleware/server_timing.rb:60:in `call'
+actionpack (8.1.3) lib/action_dispatch/middleware/executor.rb:20:in `call'
+propshaft (1.3.2) lib/propshaft/server.rb:37:in `call'
+actionpack (8.1.3) lib/action_dispatch/middleware/static.rb:27:in `call'
+rack (3.2.6) lib/rack/sendfile.rb:131:in `call'
+actionpack (8.1.3) lib/action_dispatch/middleware/host_authorization.rb:143:in `call'
+railties (8.1.3) lib/rails/engine.rb:534:in `call'
+puma (8.0.1) lib/puma/configuration.rb:305:in `call'
+puma (8.0.1) lib/puma/response.rb:79:in `block in handle_request'
+puma (8.0.1) lib/puma/thread_pool.rb:434:in `with_force_shutdown'
+puma (8.0.1) lib/puma/response.rb:78:in `handle_request'
+puma (8.0.1) lib/puma/server.rb:508:in `process_client'
+puma (8.0.1) lib/puma/server.rb:263:in `block in run'
+puma (8.0.1) lib/puma/thread_pool.rb:246:in `block in spawn_thread'
+Started GET "/favicon.ico" for 127.0.0.1 at 2026-05-16 15:44:07 +0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='Learnflows'*/[0m
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate
+
+You have 1 pending migration:
+
+db/migrate/20260516124113_add_unique_index_to_conversions_on_assignment_id.rb
+
+
+):
+  
+activerecord (8.1.3) lib/active_record/migration.rb:743:in `check_pending_migrations'
+activerecord (8.1.3) lib/active_record/migration.rb:660:in `block (2 levels) in call'
+activesupport (8.1.3) lib/active_support/file_update_checker.rb:88:in `execute'
+activerecord (8.1.3) lib/active_record/migration.rb:665:in `block in call'
+activerecord (8.1.3) lib/active_record/migration.rb:657:in `synchronize'
+activerecord (8.1.3) lib/active_record/migration.rb:657:in `call'
+actionpack (8.1.3) lib/action_dispatch/middleware/callbacks.rb:31:in `block in call'
+activesupport (8.1.3) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (8.1.3) lib/action_dispatch/middleware/callbacks.rb:30:in `call'
+actionpack (8.1.3) lib/action_dispatch/middleware/executor.rb:20:in `call'
+actionpack (8.1.3) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (8.1.3) lib/action_dispatch/middleware/debug_exceptions.rb:31:in `call'
+web-console (4.3.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.3.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.3.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.3.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (8.1.3) lib/action_dispatch/middleware/show_exceptions.rb:32:in `call'
+railties (8.1.3) lib/rails/rack/logger.rb:41:in `call_app'
+railties (8.1.3) lib/rails/rack/logger.rb:29:in `call'
+propshaft (1.3.2) lib/propshaft/quiet_assets.rb:11:in `call'
+actionpack (8.1.3) lib/action_dispatch/middleware/remote_ip.rb:98:in `call'
+actionpack (8.1.3) lib/action_dispatch/middleware/request_id.rb:34:in `call'
+rack (3.2.6) lib/rack/method_override.rb:28:in `call'
+rack (3.2.6) lib/rack/runtime.rb:24:in `call'
+activesupport (8.1.3) lib/active_support/cache/strategy/local_cache_middleware.rb:30:in `call'
+actionpack (8.1.3) lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
+actionpack (8.1.3) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
+actionpack (8.1.3) lib/action_dispatch/middleware/server_timing.rb:60:in `call'
+actionpack (8.1.3) lib/action_dispatch/middleware/executor.rb:20:in `call'
+propshaft (1.3.2) lib/propshaft/server.rb:37:in `call'
+actionpack (8.1.3) lib/action_dispatch/middleware/static.rb:27:in `call'
+rack (3.2.6) lib/rack/sendfile.rb:131:in `call'
+actionpack (8.1.3) lib/action_dispatch/middleware/host_authorization.rb:143:in `call'
+railties (8.1.3) lib/rails/engine.rb:534:in `call'
+puma (8.0.1) lib/puma/configuration.rb:305:in `call'
+puma (8.0.1) lib/puma/response.rb:79:in `block in handle_request'
+puma (8.0.1) lib/puma/thread_pool.rb:434:in `with_force_shutdown'
+puma (8.0.1) lib/puma/response.rb:78:in `handle_request'
+puma (8.0.1) lib/puma/server.rb:508:in `process_client'
+puma (8.0.1) lib/puma/server.rb:263:in `block in run'
+puma (8.0.1) lib/puma/thread_pool.rb:246:in `block in spawn_thread'
+Started POST "/rails/actions" for 127.0.0.1 at 2026-05-16 15:44:10 +0300
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = 'environment' ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1 /*application='Learnflows'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='Learnflows'*/[0m
+Migrating to AddUniqueIndexToConversionsOnAssignmentId (20260516124113)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='Learnflows'*/[0m
+  [1m[35m (1.4ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_conversions_on_assignment_id" ON "conversions" ("assignment_id") /*application='Learnflows'*/[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK TRANSACTION /*application='Learnflows'*/[0m
+  
+StandardError (An error has occurred, this and all later migrations canceled:
+
+SQLite3::SQLException: index index_conversions_on_assignment_id already exists:
+CREATE UNIQUE INDEX "index_conversions_on_assignment_id" ON "conversions" ("assignment_id") /*application='Learnflows'*/)
+Caused by: ActiveRecord::StatementInvalid (SQLite3::SQLException: index index_conversions_on_assignment_id already exists:
+CREATE UNIQUE INDEX "index_conversions_on_assignment_id" ON "conversions" ("assignment_id") /*application='Learnflows'*/)
+Caused by: SQLite3::SQLException (index index_conversions_on_assignment_id already exists:
+CREATE UNIQUE INDEX "index_conversions_on_assignment_id" ON "conversions" ("assignment_id") /*application='Learnflows'*/)
+
+Information for: StandardError (An error has occurred, this and all later migrations canceled:
+
+SQLite3::SQLException: index index_conversions_on_assignment_id already exists:
+CREATE UNIQUE INDEX "index_conversions_on_assignment_id" ON "conversions" ("assignment_id") /*application='Learnflows'*/):
+  
+
+Information for cause: ActiveRecord::StatementInvalid (SQLite3::SQLException: index index_conversions_on_assignment_id already exists:
+CREATE UNIQUE INDEX "index_conversions_on_assignment_id" ON "conversions" ("assignment_id") /*application='Learnflows'*/):
+  
+
+Information for cause: SQLite3::SQLException (index index_conversions_on_assignment_id already exists:
+CREATE UNIQUE INDEX "index_conversions_on_assignment_id" ON "conversions" ("assignment_id") /*application='Learnflows'*/):
+  
+sqlite3-2.9.4-x86_64-linux (gnu) lib/sqlite3/statement.rb:36:in `prepare'
+sqlite3-2.9.4-x86_64-linux (gnu) lib/sqlite3/statement.rb:36:in `initialize'
+sqlite3-2.9.4-x86_64-linux (gnu) lib/sqlite3/database.rb:217:in `new'
+sqlite3-2.9.4-x86_64-linux (gnu) lib/sqlite3/database.rb:217:in `prepare'
+activerecord (8.1.3) lib/active_record/connection_adapters/sqlite3/database_statements.rb:98:in `perform_query'
+activerecord (8.1.3) lib/active_record/connection_adapters/abstract/database_statements.rb:571:in `block (2 levels) in raw_execute'
+activerecord (8.1.3) lib/active_record/connection_adapters/abstract_adapter.rb:1086:in `block in with_raw_connection'
+activesupport (8.1.3) lib/active_support/concurrency/null_lock.rb:9:in `synchronize'
+activerecord (8.1.3) lib/active_record/connection_adapters/abstract_adapter.rb:1055:in `with_raw_connection'
+activerecord (8.1.3) lib/active_record/connection_adapters/abstract/database_statements.rb:570:in `block in raw_execute'
+activesupport (8.1.3) lib/active_support/notifications/instrumenter.rb:58:in `instrument'
+activerecord (8.1.3) lib/active_record/connection_adapters/abstract_adapter.rb:1206:in `log'
+activerecord (8.1.3) lib/active_record/connection_adapters/abstract/database_statements.rb:569:in `raw_execute'
+activerecord (8.1.3) lib/active_record/connection_adapters/abstract/database_statements.rb:613:in `internal_execute'
+activerecord (8.1.3) lib/active_record/connection_adapters/abstract/database_statements.rb:140:in `execute'
+activerecord (8.1.3) lib/active_record/connection_adapters/abstract/query_cache.rb:25:in `execute'
+activerecord (8.1.3) lib/active_record/connection_adapters/sqlite3/database_statements.rb:56:in `execute'
+activerecord (8.1.3) lib/active_record/connection_adapters/abstract/schema_statements.rb:949:in `add_index'
+activerecord (8.1.3) lib/active_record/migration/default_strategy.rb:10:in `method_missing'
+activerecord (8.1.3) lib/active_record/migration.rb:1061:in `block in method_missing'
+activerecord (8.1.3) lib/active_record/migration.rb:1027:in `block in say_with_time'
+activesupport (8.1.3) lib/active_support/benchmark.rb:17:in `realtime'
+activerecord (8.1.3) lib/active_record/migration.rb:1027:in `say_with_time'
+activerecord (8.1.3) lib/active_record/migration.rb:1050:in `method_missing'
+db/migrate/20260516124113_add_unique_index_to_conversions_on_assignment_id.rb:3:in `change'
+activerecord (8.1.3) lib/active_record/migration.rb:996:in `exec_migration'
+activerecord (8.1.3) lib/active_record/migration.rb:980:in `block (2 levels) in migrate'
+activesupport (8.1.3) lib/active_support/benchmark.rb:17:in `realtime'
+activerecord (8.1.3) lib/active_record/migration.rb:979:in `block in migrate'
+activerecord (8.1.3) lib/active_record/connection_adapters/abstract/connection_pool.rb:457:in `with_connection'
+activerecord (8.1.3) lib/active_record/migration.rb:978:in `migrate'
+activerecord (8.1.3) lib/active_record/migration.rb:1196:in `migrate'
+activerecord (8.1.3) lib/active_record/migration.rb:1545:in `block in execute_migration_in_transaction'
+activerecord (8.1.3) lib/active_record/connection_adapters/abstract/transaction.rb:648:in `block in within_new_transaction'
+activesupport (8.1.3) lib/active_support/concurrency/null_lock.rb:9:in `synchronize'
+activerecord (8.1.3) lib/active_record/connection_adapters/abstract/transaction.rb:645:in `within_new_transaction'
+activerecord (8.1.3) lib/active_record/connection_adapters/abstract/database_statements.rb:386:in `within_new_transaction'
+activerecord (8.1.3) lib/active_record/connection_adapters/abstract/database_statements.rb:378:in `transaction'
+activerecord (8.1.3) lib/active_record/migration.rb:1596:in `ddl_transaction'
+activerecord (8.1.3) lib/active_record/migration.rb:1544:in `execute_migration_in_transaction'
+activerecord (8.1.3) lib/active_record/migration.rb:1518:in `each'
+activerecord (8.1.3) lib/active_record/migration.rb:1518:in `migrate_without_lock'
+activerecord (8.1.3) lib/active_record/migration.rb:1465:in `migrate'
+activerecord (8.1.3) lib/active_record/migration.rb:1270:in `up'
+activerecord (8.1.3) lib/active_record/migration.rb:1245:in `migrate'
+activerecord (8.1.3) lib/active_record/tasks/database_tasks.rb:268:in `migrate'
+activerecord (8.1.3) lib/active_record/tasks/database_tasks.rb:246:in `migrate_all'
+activerecord (8.1.3) lib/active_record/migration.rb:151:in `block in <class:PendingMigrationError>'
+activesupport (8.1.3) lib/active_support/actionable_error.rb:30:in `dispatch'
+actionpack (8.1.3) lib/action_dispatch/middleware/actionable_exceptions.rb:20:in `call'
+actionpack (8.1.3) lib/action_dispatch/middleware/debug_exceptions.rb:31:in `call'
+web-console (4.3.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.3.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.3.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.3.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (8.1.3) lib/action_dispatch/middleware/show_exceptions.rb:32:in `call'
+railties (8.1.3) lib/rails/rack/logger.rb:41:in `call_app'
+railties (8.1.3) lib/rails/rack/logger.rb:29:in `call'
+propshaft (1.3.2) lib/propshaft/quiet_assets.rb:11:in `call'
+actionpack (8.1.3) lib/action_dispatch/middleware/remote_ip.rb:98:in `call'
+actionpack (8.1.3) lib/action_dispatch/middleware/request_id.rb:34:in `call'
+rack (3.2.6) lib/rack/method_override.rb:28:in `call'
+rack (3.2.6) lib/rack/runtime.rb:24:in `call'
+activesupport (8.1.3) lib/active_support/cache/strategy/local_cache_middleware.rb:30:in `call'
+actionpack (8.1.3) lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
+actionpack (8.1.3) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
+actionpack (8.1.3) lib/action_dispatch/middleware/server_timing.rb:60:in `call'
+actionpack (8.1.3) lib/action_dispatch/middleware/executor.rb:20:in `call'
+propshaft (1.3.2) lib/propshaft/server.rb:37:in `call'
+actionpack (8.1.3) lib/action_dispatch/middleware/static.rb:27:in `call'
+rack (3.2.6) lib/rack/sendfile.rb:131:in `call'
+actionpack (8.1.3) lib/action_dispatch/middleware/host_authorization.rb:143:in `call'
+railties (8.1.3) lib/rails/engine.rb:534:in `call'
+puma (8.0.1) lib/puma/configuration.rb:305:in `call'
+puma (8.0.1) lib/puma/response.rb:79:in `block in handle_request'
+puma (8.0.1) lib/puma/thread_pool.rb:434:in `with_force_shutdown'
+puma (8.0.1) lib/puma/response.rb:78:in `handle_request'
+puma (8.0.1) lib/puma/server.rb:508:in `process_client'
+puma (8.0.1) lib/puma/server.rb:263:in `block in run'
+puma (8.0.1) lib/puma/thread_pool.rb:246:in `block in spawn_thread'
+Started GET "/favicon.ico" for 127.0.0.1 at 2026-05-16 15:44:10 +0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='Learnflows'*/[0m
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate
+
+You have 1 pending migration:
+
+db/migrate/20260516124113_add_unique_index_to_conversions_on_assignment_id.rb
+
+
+):
+  
+activerecord (8.1.3) lib/active_record/migration.rb:743:in `check_pending_migrations'
+activerecord (8.1.3) lib/active_record/migration.rb:660:in `block (2 levels) in call'
+activesupport (8.1.3) lib/active_support/file_update_checker.rb:88:in `execute'
+activerecord (8.1.3) lib/active_record/migration.rb:665:in `block in call'
+activerecord (8.1.3) lib/active_record/migration.rb:657:in `synchronize'
+activerecord (8.1.3) lib/active_record/migration.rb:657:in `call'
+actionpack (8.1.3) lib/action_dispatch/middleware/callbacks.rb:31:in `block in call'
+activesupport (8.1.3) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (8.1.3) lib/action_dispatch/middleware/callbacks.rb:30:in `call'
+actionpack (8.1.3) lib/action_dispatch/middleware/executor.rb:20:in `call'
+actionpack (8.1.3) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (8.1.3) lib/action_dispatch/middleware/debug_exceptions.rb:31:in `call'
+web-console (4.3.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.3.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.3.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.3.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (8.1.3) lib/action_dispatch/middleware/show_exceptions.rb:32:in `call'
+railties (8.1.3) lib/rails/rack/logger.rb:41:in `call_app'
+railties (8.1.3) lib/rails/rack/logger.rb:29:in `call'
+propshaft (1.3.2) lib/propshaft/quiet_assets.rb:11:in `call'
+actionpack (8.1.3) lib/action_dispatch/middleware/remote_ip.rb:98:in `call'
+actionpack (8.1.3) lib/action_dispatch/middleware/request_id.rb:34:in `call'
+rack (3.2.6) lib/rack/method_override.rb:28:in `call'
+rack (3.2.6) lib/rack/runtime.rb:24:in `call'
+activesupport (8.1.3) lib/active_support/cache/strategy/local_cache_middleware.rb:30:in `call'
+actionpack (8.1.3) lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
+actionpack (8.1.3) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
+actionpack (8.1.3) lib/action_dispatch/middleware/server_timing.rb:60:in `call'
+actionpack (8.1.3) lib/action_dispatch/middleware/executor.rb:20:in `call'
+propshaft (1.3.2) lib/propshaft/server.rb:37:in `call'
+actionpack (8.1.3) lib/action_dispatch/middleware/static.rb:27:in `call'
+rack (3.2.6) lib/rack/sendfile.rb:131:in `call'
+actionpack (8.1.3) lib/action_dispatch/middleware/host_authorization.rb:143:in `call'
+railties (8.1.3) lib/rails/engine.rb:534:in `call'
+puma (8.0.1) lib/puma/configuration.rb:305:in `call'
+puma (8.0.1) lib/puma/response.rb:79:in `block in handle_request'
+puma (8.0.1) lib/puma/thread_pool.rb:434:in `with_force_shutdown'
+puma (8.0.1) lib/puma/response.rb:78:in `handle_request'
+puma (8.0.1) lib/puma/server.rb:508:in `process_client'
+puma (8.0.1) lib/puma/server.rb:263:in `block in run'
+puma (8.0.1) lib/puma/thread_pool.rb:246:in `block in spawn_thread'
+Started POST "/rails/actions" for 127.0.0.1 at 2026-05-16 15:44:18 +0300
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = 'environment' ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1 /*application='Learnflows'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='Learnflows'*/[0m
+Migrating to AddUniqueIndexToConversionsOnAssignmentId (20260516124113)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='Learnflows'*/[0m
+  [1m[35m (1.3ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_conversions_on_assignment_id" ON "conversions" ("assignment_id") /*application='Learnflows'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION /*application='Learnflows'*/[0m
+  
+StandardError (An error has occurred, this and all later migrations canceled:
+
+SQLite3::SQLException: index index_conversions_on_assignment_id already exists:
+CREATE UNIQUE INDEX "index_conversions_on_assignment_id" ON "conversions" ("assignment_id") /*application='Learnflows'*/)
+Caused by: ActiveRecord::StatementInvalid (SQLite3::SQLException: index index_conversions_on_assignment_id already exists:
+CREATE UNIQUE INDEX "index_conversions_on_assignment_id" ON "conversions" ("assignment_id") /*application='Learnflows'*/)
+Caused by: SQLite3::SQLException (index index_conversions_on_assignment_id already exists:
+CREATE UNIQUE INDEX "index_conversions_on_assignment_id" ON "conversions" ("assignment_id") /*application='Learnflows'*/)
+
+Information for: StandardError (An error has occurred, this and all later migrations canceled:
+
+SQLite3::SQLException: index index_conversions_on_assignment_id already exists:
+CREATE UNIQUE INDEX "index_conversions_on_assignment_id" ON "conversions" ("assignment_id") /*application='Learnflows'*/):
+  
+
+Information for cause: ActiveRecord::StatementInvalid (SQLite3::SQLException: index index_conversions_on_assignment_id already exists:
+CREATE UNIQUE INDEX "index_conversions_on_assignment_id" ON "conversions" ("assignment_id") /*application='Learnflows'*/):
+  
+
+Information for cause: SQLite3::SQLException (index index_conversions_on_assignment_id already exists:
+CREATE UNIQUE INDEX "index_conversions_on_assignment_id" ON "conversions" ("assignment_id") /*application='Learnflows'*/):
+  
+sqlite3-2.9.4-x86_64-linux (gnu) lib/sqlite3/statement.rb:36:in `prepare'
+sqlite3-2.9.4-x86_64-linux (gnu) lib/sqlite3/statement.rb:36:in `initialize'
+sqlite3-2.9.4-x86_64-linux (gnu) lib/sqlite3/database.rb:217:in `new'
+sqlite3-2.9.4-x86_64-linux (gnu) lib/sqlite3/database.rb:217:in `prepare'
+activerecord (8.1.3) lib/active_record/connection_adapters/sqlite3/database_statements.rb:98:in `perform_query'
+activerecord (8.1.3) lib/active_record/connection_adapters/abstract/database_statements.rb:571:in `block (2 levels) in raw_execute'
+activerecord (8.1.3) lib/active_record/connection_adapters/abstract_adapter.rb:1086:in `block in with_raw_connection'
+activesupport (8.1.3) lib/active_support/concurrency/null_lock.rb:9:in `synchronize'
+activerecord (8.1.3) lib/active_record/connection_adapters/abstract_adapter.rb:1055:in `with_raw_connection'
+activerecord (8.1.3) lib/active_record/connection_adapters/abstract/database_statements.rb:570:in `block in raw_execute'
+activesupport (8.1.3) lib/active_support/notifications/instrumenter.rb:58:in `instrument'
+activerecord (8.1.3) lib/active_record/connection_adapters/abstract_adapter.rb:1206:in `log'
+activerecord (8.1.3) lib/active_record/connection_adapters/abstract/database_statements.rb:569:in `raw_execute'
+activerecord (8.1.3) lib/active_record/connection_adapters/abstract/database_statements.rb:613:in `internal_execute'
+activerecord (8.1.3) lib/active_record/connection_adapters/abstract/database_statements.rb:140:in `execute'
+activerecord (8.1.3) lib/active_record/connection_adapters/abstract/query_cache.rb:25:in `execute'
+activerecord (8.1.3) lib/active_record/connection_adapters/sqlite3/database_statements.rb:56:in `execute'
+activerecord (8.1.3) lib/active_record/connection_adapters/abstract/schema_statements.rb:949:in `add_index'
+activerecord (8.1.3) lib/active_record/migration/default_strategy.rb:10:in `method_missing'
+activerecord (8.1.3) lib/active_record/migration.rb:1061:in `block in method_missing'
+activerecord (8.1.3) lib/active_record/migration.rb:1027:in `block in say_with_time'
+activesupport (8.1.3) lib/active_support/benchmark.rb:17:in `realtime'
+activerecord (8.1.3) lib/active_record/migration.rb:1027:in `say_with_time'
+activerecord (8.1.3) lib/active_record/migration.rb:1050:in `method_missing'
+db/migrate/20260516124113_add_unique_index_to_conversions_on_assignment_id.rb:3:in `change'
+activerecord (8.1.3) lib/active_record/migration.rb:996:in `exec_migration'
+activerecord (8.1.3) lib/active_record/migration.rb:980:in `block (2 levels) in migrate'
+activesupport (8.1.3) lib/active_support/benchmark.rb:17:in `realtime'
+activerecord (8.1.3) lib/active_record/migration.rb:979:in `block in migrate'
+activerecord (8.1.3) lib/active_record/connection_adapters/abstract/connection_pool.rb:457:in `with_connection'
+activerecord (8.1.3) lib/active_record/migration.rb:978:in `migrate'
+activerecord (8.1.3) lib/active_record/migration.rb:1196:in `migrate'
+activerecord (8.1.3) lib/active_record/migration.rb:1545:in `block in execute_migration_in_transaction'
+activerecord (8.1.3) lib/active_record/connection_adapters/abstract/transaction.rb:648:in `block in within_new_transaction'
+activesupport (8.1.3) lib/active_support/concurrency/null_lock.rb:9:in `synchronize'
+activerecord (8.1.3) lib/active_record/connection_adapters/abstract/transaction.rb:645:in `within_new_transaction'
+activerecord (8.1.3) lib/active_record/connection_adapters/abstract/database_statements.rb:386:in `within_new_transaction'
+activerecord (8.1.3) lib/active_record/connection_adapters/abstract/database_statements.rb:378:in `transaction'
+activerecord (8.1.3) lib/active_record/migration.rb:1596:in `ddl_transaction'
+activerecord (8.1.3) lib/active_record/migration.rb:1544:in `execute_migration_in_transaction'
+activerecord (8.1.3) lib/active_record/migration.rb:1518:in `each'
+activerecord (8.1.3) lib/active_record/migration.rb:1518:in `migrate_without_lock'
+activerecord (8.1.3) lib/active_record/migration.rb:1465:in `migrate'
+activerecord (8.1.3) lib/active_record/migration.rb:1270:in `up'
+activerecord (8.1.3) lib/active_record/migration.rb:1245:in `migrate'
+activerecord (8.1.3) lib/active_record/tasks/database_tasks.rb:268:in `migrate'
+activerecord (8.1.3) lib/active_record/tasks/database_tasks.rb:246:in `migrate_all'
+activerecord (8.1.3) lib/active_record/migration.rb:151:in `block in <class:PendingMigrationError>'
+activesupport (8.1.3) lib/active_support/actionable_error.rb:30:in `dispatch'
+actionpack (8.1.3) lib/action_dispatch/middleware/actionable_exceptions.rb:20:in `call'
+actionpack (8.1.3) lib/action_dispatch/middleware/debug_exceptions.rb:31:in `call'
+web-console (4.3.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.3.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.3.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.3.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (8.1.3) lib/action_dispatch/middleware/show_exceptions.rb:32:in `call'
+railties (8.1.3) lib/rails/rack/logger.rb:41:in `call_app'
+railties (8.1.3) lib/rails/rack/logger.rb:29:in `call'
+propshaft (1.3.2) lib/propshaft/quiet_assets.rb:11:in `call'
+actionpack (8.1.3) lib/action_dispatch/middleware/remote_ip.rb:98:in `call'
+actionpack (8.1.3) lib/action_dispatch/middleware/request_id.rb:34:in `call'
+rack (3.2.6) lib/rack/method_override.rb:28:in `call'
+rack (3.2.6) lib/rack/runtime.rb:24:in `call'
+activesupport (8.1.3) lib/active_support/cache/strategy/local_cache_middleware.rb:30:in `call'
+actionpack (8.1.3) lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
+actionpack (8.1.3) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
+actionpack (8.1.3) lib/action_dispatch/middleware/server_timing.rb:60:in `call'
+actionpack (8.1.3) lib/action_dispatch/middleware/executor.rb:20:in `call'
+propshaft (1.3.2) lib/propshaft/server.rb:37:in `call'
+actionpack (8.1.3) lib/action_dispatch/middleware/static.rb:27:in `call'
+rack (3.2.6) lib/rack/sendfile.rb:131:in `call'
+actionpack (8.1.3) lib/action_dispatch/middleware/host_authorization.rb:143:in `call'
+railties (8.1.3) lib/rails/engine.rb:534:in `call'
+puma (8.0.1) lib/puma/configuration.rb:305:in `call'
+puma (8.0.1) lib/puma/response.rb:79:in `block in handle_request'
+puma (8.0.1) lib/puma/thread_pool.rb:434:in `with_force_shutdown'
+puma (8.0.1) lib/puma/response.rb:78:in `handle_request'
+puma (8.0.1) lib/puma/server.rb:508:in `process_client'
+puma (8.0.1) lib/puma/server.rb:263:in `block in run'
+puma (8.0.1) lib/puma/thread_pool.rb:246:in `block in spawn_thread'
+Started GET "/favicon.ico" for 127.0.0.1 at 2026-05-16 15:44:19 +0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='Learnflows'*/[0m
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate
+
+You have 1 pending migration:
+
+db/migrate/20260516124113_add_unique_index_to_conversions_on_assignment_id.rb
+
+
+):
+  
+activerecord (8.1.3) lib/active_record/migration.rb:743:in `check_pending_migrations'
+activerecord (8.1.3) lib/active_record/migration.rb:660:in `block (2 levels) in call'
+activesupport (8.1.3) lib/active_support/file_update_checker.rb:88:in `execute'
+activerecord (8.1.3) lib/active_record/migration.rb:665:in `block in call'
+activerecord (8.1.3) lib/active_record/migration.rb:657:in `synchronize'
+activerecord (8.1.3) lib/active_record/migration.rb:657:in `call'
+actionpack (8.1.3) lib/action_dispatch/middleware/callbacks.rb:31:in `block in call'
+activesupport (8.1.3) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (8.1.3) lib/action_dispatch/middleware/callbacks.rb:30:in `call'
+actionpack (8.1.3) lib/action_dispatch/middleware/executor.rb:20:in `call'
+actionpack (8.1.3) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (8.1.3) lib/action_dispatch/middleware/debug_exceptions.rb:31:in `call'
+web-console (4.3.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.3.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.3.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.3.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (8.1.3) lib/action_dispatch/middleware/show_exceptions.rb:32:in `call'
+railties (8.1.3) lib/rails/rack/logger.rb:41:in `call_app'
+railties (8.1.3) lib/rails/rack/logger.rb:29:in `call'
+propshaft (1.3.2) lib/propshaft/quiet_assets.rb:11:in `call'
+actionpack (8.1.3) lib/action_dispatch/middleware/remote_ip.rb:98:in `call'
+actionpack (8.1.3) lib/action_dispatch/middleware/request_id.rb:34:in `call'
+rack (3.2.6) lib/rack/method_override.rb:28:in `call'
+rack (3.2.6) lib/rack/runtime.rb:24:in `call'
+activesupport (8.1.3) lib/active_support/cache/strategy/local_cache_middleware.rb:30:in `call'
+actionpack (8.1.3) lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
+actionpack (8.1.3) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
+actionpack (8.1.3) lib/action_dispatch/middleware/server_timing.rb:60:in `call'
+actionpack (8.1.3) lib/action_dispatch/middleware/executor.rb:20:in `call'
+propshaft (1.3.2) lib/propshaft/server.rb:37:in `call'
+actionpack (8.1.3) lib/action_dispatch/middleware/static.rb:27:in `call'
+rack (3.2.6) lib/rack/sendfile.rb:131:in `call'
+actionpack (8.1.3) lib/action_dispatch/middleware/host_authorization.rb:143:in `call'
+railties (8.1.3) lib/rails/engine.rb:534:in `call'
+puma (8.0.1) lib/puma/configuration.rb:305:in `call'
+puma (8.0.1) lib/puma/response.rb:79:in `block in handle_request'
+puma (8.0.1) lib/puma/thread_pool.rb:434:in `with_force_shutdown'
+puma (8.0.1) lib/puma/response.rb:78:in `handle_request'
+puma (8.0.1) lib/puma/server.rb:508:in `process_client'
+puma (8.0.1) lib/puma/server.rb:263:in `block in run'
+puma (8.0.1) lib/puma/thread_pool.rb:246:in `block in spawn_thread'
+Started GET "/" for 127.0.0.1 at 2026-05-16 15:45:03 +0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='Learnflows'*/[0m
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate
+
+You have 1 pending migration:
+
+db/migrate/20260516124113_add_unique_index_to_conversions_on_assignment_id.rb
+
+
+):
+  
+activerecord (8.1.3) lib/active_record/migration.rb:743:in `check_pending_migrations'
+activerecord (8.1.3) lib/active_record/migration.rb:660:in `block (2 levels) in call'
+activesupport (8.1.3) lib/active_support/file_update_checker.rb:88:in `execute'
+activerecord (8.1.3) lib/active_record/migration.rb:665:in `block in call'
+activerecord (8.1.3) lib/active_record/migration.rb:657:in `synchronize'
+activerecord (8.1.3) lib/active_record/migration.rb:657:in `call'
+actionpack (8.1.3) lib/action_dispatch/middleware/callbacks.rb:31:in `block in call'
+activesupport (8.1.3) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (8.1.3) lib/action_dispatch/middleware/callbacks.rb:30:in `call'
+actionpack (8.1.3) lib/action_dispatch/middleware/executor.rb:20:in `call'
+actionpack (8.1.3) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (8.1.3) lib/action_dispatch/middleware/debug_exceptions.rb:31:in `call'
+web-console (4.3.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.3.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.3.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.3.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (8.1.3) lib/action_dispatch/middleware/show_exceptions.rb:32:in `call'
+railties (8.1.3) lib/rails/rack/logger.rb:41:in `call_app'
+railties (8.1.3) lib/rails/rack/logger.rb:29:in `call'
+propshaft (1.3.2) lib/propshaft/quiet_assets.rb:11:in `call'
+actionpack (8.1.3) lib/action_dispatch/middleware/remote_ip.rb:98:in `call'
+actionpack (8.1.3) lib/action_dispatch/middleware/request_id.rb:34:in `call'
+rack (3.2.6) lib/rack/method_override.rb:28:in `call'
+rack (3.2.6) lib/rack/runtime.rb:24:in `call'
+activesupport (8.1.3) lib/active_support/cache/strategy/local_cache_middleware.rb:30:in `call'
+actionpack (8.1.3) lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
+actionpack (8.1.3) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
+actionpack (8.1.3) lib/action_dispatch/middleware/server_timing.rb:60:in `call'
+actionpack (8.1.3) lib/action_dispatch/middleware/executor.rb:20:in `call'
+propshaft (1.3.2) lib/propshaft/server.rb:37:in `call'
+actionpack (8.1.3) lib/action_dispatch/middleware/static.rb:27:in `call'
+rack (3.2.6) lib/rack/sendfile.rb:131:in `call'
+actionpack (8.1.3) lib/action_dispatch/middleware/host_authorization.rb:143:in `call'
+railties (8.1.3) lib/rails/engine.rb:534:in `call'
+puma (8.0.1) lib/puma/configuration.rb:305:in `call'
+puma (8.0.1) lib/puma/response.rb:79:in `block in handle_request'
+puma (8.0.1) lib/puma/thread_pool.rb:434:in `with_force_shutdown'
+puma (8.0.1) lib/puma/response.rb:78:in `handle_request'
+puma (8.0.1) lib/puma/server.rb:508:in `process_client'
+puma (8.0.1) lib/puma/server.rb:263:in `block in run'
+puma (8.0.1) lib/puma/thread_pool.rb:246:in `block in spawn_thread'
+Started GET "/favicon.ico" for 127.0.0.1 at 2026-05-16 15:45:03 +0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='Learnflows'*/[0m
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate
+
+You have 1 pending migration:
+
+db/migrate/20260516124113_add_unique_index_to_conversions_on_assignment_id.rb
+
+
+):
+  
+activerecord (8.1.3) lib/active_record/migration.rb:743:in `check_pending_migrations'
+activerecord (8.1.3) lib/active_record/migration.rb:660:in `block (2 levels) in call'
+activesupport (8.1.3) lib/active_support/file_update_checker.rb:88:in `execute'
+activerecord (8.1.3) lib/active_record/migration.rb:665:in `block in call'
+activerecord (8.1.3) lib/active_record/migration.rb:657:in `synchronize'
+activerecord (8.1.3) lib/active_record/migration.rb:657:in `call'
+actionpack (8.1.3) lib/action_dispatch/middleware/callbacks.rb:31:in `block in call'
+activesupport (8.1.3) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (8.1.3) lib/action_dispatch/middleware/callbacks.rb:30:in `call'
+actionpack (8.1.3) lib/action_dispatch/middleware/executor.rb:20:in `call'
+actionpack (8.1.3) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (8.1.3) lib/action_dispatch/middleware/debug_exceptions.rb:31:in `call'
+web-console (4.3.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.3.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.3.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.3.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (8.1.3) lib/action_dispatch/middleware/show_exceptions.rb:32:in `call'
+railties (8.1.3) lib/rails/rack/logger.rb:41:in `call_app'
+railties (8.1.3) lib/rails/rack/logger.rb:29:in `call'
+propshaft (1.3.2) lib/propshaft/quiet_assets.rb:11:in `call'
+actionpack (8.1.3) lib/action_dispatch/middleware/remote_ip.rb:98:in `call'
+actionpack (8.1.3) lib/action_dispatch/middleware/request_id.rb:34:in `call'
+rack (3.2.6) lib/rack/method_override.rb:28:in `call'
+rack (3.2.6) lib/rack/runtime.rb:24:in `call'
+activesupport (8.1.3) lib/active_support/cache/strategy/local_cache_middleware.rb:30:in `call'
+actionpack (8.1.3) lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
+actionpack (8.1.3) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
+actionpack (8.1.3) lib/action_dispatch/middleware/server_timing.rb:60:in `call'
+actionpack (8.1.3) lib/action_dispatch/middleware/executor.rb:20:in `call'
+propshaft (1.3.2) lib/propshaft/server.rb:37:in `call'
+actionpack (8.1.3) lib/action_dispatch/middleware/static.rb:27:in `call'
+rack (3.2.6) lib/rack/sendfile.rb:131:in `call'
+actionpack (8.1.3) lib/action_dispatch/middleware/host_authorization.rb:143:in `call'
+railties (8.1.3) lib/rails/engine.rb:534:in `call'
+puma (8.0.1) lib/puma/configuration.rb:305:in `call'
+puma (8.0.1) lib/puma/response.rb:79:in `block in handle_request'
+puma (8.0.1) lib/puma/thread_pool.rb:434:in `with_force_shutdown'
+puma (8.0.1) lib/puma/response.rb:78:in `handle_request'
+puma (8.0.1) lib/puma/server.rb:508:in `process_client'
+puma (8.0.1) lib/puma/server.rb:263:in `block in run'
+puma (8.0.1) lib/puma/thread_pool.rb:246:in `block in spawn_thread'
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = 'environment' ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1 /*application='Learnflows'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='Learnflows'*/[0m
+Migrating to AddUniqueIndexToConversionsOnAssignmentId (20260516124113)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='Learnflows'*/[0m
+  [1m[35m (1.4ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_conversions_on_assignment_id" ON "conversions" ("assignment_id") /*application='Learnflows'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION /*application='Learnflows'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = 'environment' ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1 /*application='Learnflows'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='Learnflows'*/[0m
+Migrating to AddUniqueIndexToConversionsOnAssignmentId (20260516124113)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='Learnflows'*/[0m
+  [1m[35m (1.3ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_conversions_on_assignment_id" ON "conversions" ("assignment_id") /*application='Learnflows'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK TRANSACTION /*application='Learnflows'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = 'environment' ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1 /*application='Learnflows'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='Learnflows'*/[0m
+Migrating to AddUniqueIndexToConversionsOnAssignmentId (20260516124113)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='Learnflows'*/[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[35mDROP INDEX "index_conversions_on_assignment_id" /*application='Learnflows'*/[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_conversions_on_assignment_id" ON "conversions" ("assignment_id") /*application='Learnflows'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20260516124113') RETURNING "version" /*application='Learnflows'*/[0m
+  [1m[36mTRANSACTION (6.6ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='Learnflows'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='Learnflows'*/[0m
