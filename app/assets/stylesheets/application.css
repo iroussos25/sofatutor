@@ -145,7 +145,7 @@ body {
   padding: 0 2rem;
 }
 
-.course-detail a {
+.course-detail a:not(.cta-button) {
   color: #4f46e5;
   text-decoration: none;
   font-size: 0.9rem;
